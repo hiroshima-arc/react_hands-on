@@ -1,9 +1,10 @@
+/* eslint-disable import/prefer-default-export */
 // @flow
 import type { EnthusiasmAction } from '../actions';
 import type { StoreState } from '../types';
 import { INCREMENT_ENTHUSIASM, DECREMENT_ENTHUSIASM } from '../constants';
 
-export default function enthusiasm(state: StoreState, action: EnthusiasmAction): StoreState {
+export function enthusiasm(state: StoreState, action: EnthusiasmAction): StoreState {
   switch (action.type) {
     case INCREMENT_ENTHUSIASM:
       return { ...state, enthusiasmLevel: state.enthusiasmLevel + 1 };
