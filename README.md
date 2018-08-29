@@ -26,6 +26,16 @@ vagrant up
 vagrant ssh
 ```
 
+### 開発パッケージのインストール
++ nvmのインストール
++ Node.jsのインストール
+```bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.3/install.sh | bash
+source ~/.bashrc 
+nvm install v8.10
+nvm alias default v8.10
+```
+
 **[⬆ back to top](#構成)**
 
 ## 配置
@@ -38,4 +48,5 @@ vagrant ssh
 **[⬆ back to top](#構成)**
 
 # 参照 #
++ [nvmを使ったNode.jsのインストール&バージョンアップ手順](https://qiita.com/ffggss/items/94f1c4c5d311db2ec71a) 
  
