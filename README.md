@@ -222,6 +222,11 @@ package.jsonにnpm-scriptを追加する
   },
 ```
 
+### Enzymeのセットアップ
+```
+npm install -D enzyme @types/enzyme enzyme-adapter-react-16 @types/enzyme-adapter-react-16 react-test-renderer
+```
+
 **[⬆ back to top](#構成)**
 
 # 参照 #
