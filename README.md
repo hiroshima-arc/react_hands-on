@@ -45,6 +45,8 @@ nvm alias default v8.10
 **[⬆ back to top](#構成)**
 
 ## 開発
+### アプリケーションのセットアップ
+
 create-react-appをインストール
 ```
 npm install -g create-react-app
@@ -57,6 +59,56 @@ cd react-app
 npm start
 ```
 [http://192.168.33.10:3000](http://192.168.33.10:3000)に接続して確認する
+
+### ESLintのセットアップ
+```bash
+cd /vagrant/react-app
+npm install eslint --save-dev
+npm install --dev eslint-plugin-compat
+```
+### eslint-config-airbnbのセットアップ
+```bash
+cd /vagrant/react-app
+npx install-peerdeps --dev eslint-config-airbnb
+npx eslint --init
+cat <<EOF > .eslintrc.json
+{
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended"
+  ],
+  "plugins": [
+    "flowtype",
+    "compat"
+  ],
+  "rules": {
+    "react/jsx-wrap-multilines": 0,
+    "eol-last": 0,
+    "function-paren-newline": 0,
+    "jsx-a11y/no-redundant-roles": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "react/jsx-filename-extension": 0
+  },
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "settings": {
+    "polyfills": ["fetch"]
+  }
+}
+EOF
+```
+package.jsonにnpm-scriptを追加する
+```json
+"scripts": {
+    "lint": "eslint ./src"
+  },
+```
+lintコマンドを実行する
+```bash
+npm run lint
+```
 
 **[⬆ back to top](#構成)**
 
