@@ -232,6 +232,12 @@ npm install -D enzyme react-test-renderer
 npm install -S redux react-redux
 ```
 
+### React Routerのセットアップ
+```
+npm install -S react-router-dom react-router
+```
+
+
 **[⬆ back to top](#構成)**
 
 # 参照 #
@@ -240,4 +246,5 @@ npm install -S redux react-redux
 + [ESLint](https://eslint.org/)
 + [stylelint](https://github.com/stylelint/stylelint)
 + [Deploying create-react-app to S3 and CloudFront](https://medium.com/@omgwtfmarc/deploying-create-react-app-to-s3-or-cloudfront-48dae4ce0af)
-+ [TypeScript React Starter](https://github.com/Microsoft/TypeScript-React-Starter)  
++ [TypeScript React Starter](https://github.com/Microsoft/TypeScript-React-Starter)
++ [React Router](https://github.com/ReactTraining/react-router)  
