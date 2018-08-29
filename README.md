@@ -133,6 +133,40 @@ lintコマンドを実行する
 npm run lint:css
 ```
 
+### Flowのセットアップ
+```
+npm install --dev flow-bin babel-preset-flow babel-eslint eslint-plugin-flowtype flow-typed
+npx flow init
+npx flow-typed install
+cat <<EOF > .flowconfig
+[ignore]
+.*/node_modules/.*
+
+[include]
+
+[libs]
+/type-def-libs
+
+[lints]
+
+[options]
+suppress_comment= \\(.\\|\n\\)*\\flow-disable-next-line
+
+[strict]
+EOF
+```
+package.jsonにnpm-scriptを追加する
+```json
+"scripts": {
+    "flow": "flow ./src"
+  },
+```
+flowコマンドを実行する
+```bash
+npm run flow
+```
+
+
 **[⬆ back to top](#構成)**
 
 # 参照 #

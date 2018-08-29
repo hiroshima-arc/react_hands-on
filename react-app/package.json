@@ -3,7 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-eslint": "^9.0.0",
+    "babel-preset-flow": "^6.23.0",
     "eslint-plugin-compat": "^2.5.1",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "flow-bin": "^0.79.1",
+    "flow-typed": "^2.5.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-scripts": "1.1.5",
@@ -17,6 +22,7 @@
     "test": "react-scripts test --env=jsdom",
     "lint": "eslint ./src",
     "lint:css": "stylelint ./src",
+    "flow": "flow ./src",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
