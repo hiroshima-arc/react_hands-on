@@ -45,8 +45,21 @@ nvm alias default v8.10
 **[⬆ back to top](#構成)**
 
 ## 開発
+create-react-appをインストール
+```
+npm install -g create-react-app
+```
+新規アプリケーションの作成
+```
+cd /vagrant
+create-react-app react-app
+cd react-app
+npm start
+```
+[http://192.168.33.10:3000](http://192.168.33.10:3000)に接続して確認する
+
 **[⬆ back to top](#構成)**
 
 # 参照 #
 + [nvmを使ったNode.jsのインストール&バージョンアップ手順](https://qiita.com/ffggss/items/94f1c4c5d311db2ec71a) 
- 
++ [Create React App](https://github.com/facebook/create-react-app) 
