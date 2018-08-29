@@ -16,6 +16,10 @@
     "stylelint-config-standard": "^18.2.0",
     "stylelint-scss": "^3.3.0"
   },
+  "config": {
+    "s3BucketName": "react-hands-on",
+    "region": "us-east-1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -24,6 +28,11 @@
     "lint:css": "stylelint ./src",
     "flow": "flow ./src",
     "coverage": "npm test -- --coverage",
+    "web:create": "aws s3 mb s3://$npm_package_config_s3BucketName --region $npm_package_config_region && aws s3 website s3://$npm_package_config_s3BucketName/ --index-document index.html --error-document error.html",
+    "web:deploy": "npm run build && aws s3 sync build/ s3://$npm_package_config_s3BucketName --region $npm_package_config_region --grants full=uri=http://acs.amazonaws.com/groups/global/AllUsers",
+    "web:site": "echo http://$npm_package_config_s3BucketName.s3-website-$npm_package_config_region.amazonaws.com",
+    "web:open": "open http://$npm_package_config_s3BucketName.s3-website-$npm_package_config_region.amazonaws.com",
+    "web:destroy": "aws s3 rb s3://$npm_package_config_s3BucketName --region $npm_package_config_region --force",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
