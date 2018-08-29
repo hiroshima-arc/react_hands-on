@@ -70,7 +70,7 @@ package.jsonにnpm-scriptを追加する
     "web:destroy": "aws s3 rb s3://$npm_package_config_s3BucketName --region $npm_package_config_region --force",
   },
 ```
-
+以下のスクリプトを実行する
 ```
 npm run web:create
 npm run web:deploy
@@ -80,6 +80,16 @@ npm run web:site
 **[⬆ back to top](#構成)**
 
 ## 運用
+### サイトのデプロイ
+```
+npm run web:deploy
+```
+
+### サイトの削除
+```
+npm run web:destroy
+```
+
 **[⬆ back to top](#構成)**
 
 ## 開発
