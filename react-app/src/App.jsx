@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import './App.css';
-import Nav from './components/pages/Nav';
+import NavBar from './components/pages/NavBar';
 import { enthusiasm } from './reducers';
 
 const store = createStore(enthusiasm, {
@@ -13,7 +13,7 @@ const store = createStore(enthusiasm, {
 const App = () => (
   <div>
     <Provider store={store}>
-      <Nav />
+      <NavBar />
     </Provider>
   </div>
 );
