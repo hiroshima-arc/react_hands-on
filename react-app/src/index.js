@@ -1,8 +1,18 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from 'react';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import Hello from './containers/Hello';
+import { enthusiasm } from './reducers/index';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const store = createStore(enthusiasm, {
+  enthusiasmLevel: 1,
+  languageName: 'ES6',
+});
+
+ReactDOM.render(
+  <Provider store={store}>
+    <Hello />
+  </Provider>,
+  document.getElementById('root'),
+);

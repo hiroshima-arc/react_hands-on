@@ -11,7 +11,9 @@
     "flow-typed": "^2.5.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
     "react-scripts": "1.1.5",
+    "redux": "^4.0.0",
     "stylelint": "^9.5.0",
     "stylelint-config-standard": "^18.2.0",
     "stylelint-scss": "^3.3.0"
@@ -24,7 +26,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "lint": "eslint ./src",
+    "lint": "eslint src --ext .js,.jsx",
     "lint:css": "stylelint ./src",
     "flow": "flow ./src",
     "coverage": "npm test -- --coverage",
@@ -36,10 +38,13 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "enzyme": "^3.5.0",
+    "enzyme-adapter-react-16": "^1.3.0",
     "eslint": "^5.4.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.1"
+    "eslint-plugin-react": "^7.11.1",
+    "react-test-renderer": "^16.4.2"
   }
 }

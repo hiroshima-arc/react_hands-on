@@ -150,7 +150,7 @@ EOF
 package.jsonにnpm-scriptを追加する
 ```json
 "scripts": {
-    "lint": "eslint ./src"
+    "lint": "eslint src --ext .js,.jsx"
   },
 ```
 lintコマンドを実行する
@@ -222,6 +222,16 @@ package.jsonにnpm-scriptを追加する
   },
 ```
 
+### Enzymeのセットアップ
+```
+npm install -D enzyme react-test-renderer
+```
+
+### Reduxのセットアップ
+```
+npm install -S redux react-redux
+```
+
 **[⬆ back to top](#構成)**
 
 # 参照 #
@@ -229,4 +239,5 @@ package.jsonにnpm-scriptを追加する
 + [Create React App](https://github.com/facebook/create-react-app)
 + [ESLint](https://eslint.org/)
 + [stylelint](https://github.com/stylelint/stylelint)
-+ [Deploying create-react-app to S3 and CloudFront](https://medium.com/@omgwtfmarc/deploying-create-react-app-to-s3-or-cloudfront-48dae4ce0af)  
++ [Deploying create-react-app to S3 and CloudFront](https://medium.com/@omgwtfmarc/deploying-create-react-app-to-s3-or-cloudfront-48dae4ce0af)
++ [TypeScript React Starter](https://github.com/Microsoft/TypeScript-React-Starter)  
