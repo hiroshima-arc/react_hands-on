@@ -23,6 +23,7 @@
     "lint": "eslint ./src",
     "lint:css": "stylelint ./src",
     "flow": "flow ./src",
+    "coverage": "npm test -- --coverage",
     "eject": "react-scripts eject"
   },
   "devDependencies": {

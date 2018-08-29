@@ -166,6 +166,13 @@ flowコマンドを実行する
 npm run flow
 ```
 
+### コードカバレッジのセットアップ
+package.jsonにnpm-scriptを追加する
+```json
+"scripts": {    
+    "coverage": "npm test -- --coverage"
+  },
+```
 
 **[⬆ back to top](#構成)**
 
