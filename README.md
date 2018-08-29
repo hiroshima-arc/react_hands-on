@@ -110,8 +110,33 @@ lintコマンドを実行する
 npm run lint
 ```
 
+### StyleLintのセットアップ
+```
+npm install --dev stylelint stylelint-scss stylelint-config-standard
+cat <<EOF > .stylelintrc.json
+{
+  "plugins": [
+    "stylelint-scss"
+  ],
+   "extends": "stylelint-config-standard"
+}
+EOF
+```
+package.jsonにnpm-scriptを追加する
+```json
+"scripts": {
+    "lint:css": "stylelint ./src"
+  },
+```
+lintコマンドを実行する
+```bash
+npm run lint:css
+```
+
 **[⬆ back to top](#構成)**
 
 # 参照 #
 + [nvmを使ったNode.jsのインストール&バージョンアップ手順](https://qiita.com/ffggss/items/94f1c4c5d311db2ec71a) 
-+ [Create React App](https://github.com/facebook/create-react-app) 
++ [Create React App](https://github.com/facebook/create-react-app)
++ [ESLint](https://eslint.org/)
++ [stylelint](https://github.com/stylelint/stylelint) 
