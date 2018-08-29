@@ -6,6 +6,8 @@ import './Hello.css';
 type Props = {
     name: string;
     enthusiasmLevel: number;
+    onIncrement: () => void;
+    onDecrement: () => void;
 };
 
 // helpers
@@ -14,7 +16,9 @@ function getExclamationMarks(numChars) {
 }
 
 function Hello(props: Props) {
-  const { name, enthusiasmLevel = 1 } = props;
+  const {
+    name, enthusiasmLevel = 1, onIncrement, onDecrement,
+  } = props;
 
   if (enthusiasmLevel <= 0) {
     throw new Error('You could be a little more enthusiastic. :D');
@@ -25,6 +29,10 @@ function Hello(props: Props) {
         Hello
         {' '}
         {name + getExclamationMarks(enthusiasmLevel)}
+      </div>
+      <div>
+        <button type="button" onClick={onDecrement}>-</button>
+        <button type="button" onClick={onIncrement}>+</button>
       </div>
     </div>
   );
