@@ -6,8 +6,12 @@ import logger from 'redux-logger';
 import './App.css';
 import NavBar from './components/pages/NavBar';
 import reducers from './reducers';
+import { isProd } from './constants/utils';
 
-const store = createStore(reducers, applyMiddleware(thunk, logger));
+const store = createStore(
+  reducers,
+  isProd ? applyMiddleware(thunk) : applyMiddleware(thunk, logger),
+);
 
 const App = () => (
   <div>

@@ -1,7 +1,9 @@
 /* eslint-disable max-len */
 // @flow
 
-import { NODEJS_APICALL } from '../../constants';
+import {
+  NODEJS_APICALL, NODEJS_APICALL_REQUEST, NODEJS_APICALL_SUCCESS, NODEJS_APICALL_FAILURE,
+} from '../../constants';
 import { HelloLambdaState } from '../../types/HelloLambda';
 import type { LambdaApiCallAction } from '../../actions';
 
@@ -17,6 +19,15 @@ export function helloLambda(state: HelloLambdaState = initialState, action: Lamb
         ...state,
         ...action.payload,
       };
+    case NODEJS_APICALL_REQUEST:
+      return { ...state, message: 'Now Loading...' };
+    case NODEJS_APICALL_SUCCESS:
+      return {
+        ...state,
+        ...action.payload,
+      };
+    case NODEJS_APICALL_FAILURE:
+      return { ...state, message: action.payload };
     default:
       return state;
   }
