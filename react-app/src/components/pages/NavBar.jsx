@@ -11,6 +11,7 @@ import {
   BrowserRouter as Router, Link, Route,
 } from 'react-router-dom';
 import HelloApp from '../hello/App';
+import HelloLambdaApp from '../hello_lambda/App';
 import About from './About';
 import Home from './Home';
 import Topics from './Topics';
@@ -32,6 +33,9 @@ const NavBar = () => (
             <NavDropdown eventKey={4} title="Application" id="basic-nav-dropdown">
               <LinkContainer to="/hello">
                 <MenuItem eventKey={4.1}>Hello</MenuItem>
+              </LinkContainer>
+              <LinkContainer to="/hello_lambda">
+                <MenuItem eventKey={4.1}>HelloLambda</MenuItem>
               </LinkContainer>
             </NavDropdown>
             <LinkContainer to="/topics">
@@ -55,6 +59,7 @@ const NavBar = () => (
       <Route path="/form" component={AppForm} />
       <Route path="/modal" component={AppModal} />
       <Route path="/hello" component={HelloApp} />
+      <Route path="/hello_lambda" component={HelloLambdaApp} />
     </div>
   </Router>
 );
