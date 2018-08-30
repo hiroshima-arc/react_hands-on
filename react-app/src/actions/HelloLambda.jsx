@@ -24,21 +24,13 @@ const apiCall: any = async (url: string) => {
   return json;
 };
 
-export const nodejsApiCall: NodejsApiCall = () => (dispatch: Dispatch) => {
-  const payload = { name: 'nodejs', message: 'hello' };
-  return dispatch({
-    type: constants.NODEJS_APICALL,
-    payload,
-  });
-};
-
-export const asyncNodeJsApiCallRequest = createAction(constants.NODEJS_APICALL_REQUEST);
-export const asyncNodeJsApiCallFailure = createAction(constants.NODEJS_APICALL_FAILURE);
+export const asyncNodeJsApiCallRequest = createAction(constants.APICALL_REQUEST);
+export const asyncNodeJsApiCallFailure = createAction(constants.APICALL_FAILURE);
 export const asyncNodeJsApiCall: NodejsApiCall = (url: string) => async (dispatch: Dispatch): Promise => {
   try {
     dispatch(asyncNodeJsApiCallRequest());
     return dispatch({
-      type: constants.NODEJS_APICALL_SUCCESS,
+      type: constants.APICALL_SUCCESS,
       payload: await apiCall(url),
     });
   } catch (e) {
@@ -46,13 +38,13 @@ export const asyncNodeJsApiCall: NodejsApiCall = (url: string) => async (dispatc
   }
 };
 
-export const asyncJavaApiCallRequest = createAction(constants.JAVA_APICALL_REQUEST);
-export const asyncJavaApiCallFailure = createAction(constants.JAVA_APICALL_FAILURE);
+export const asyncJavaApiCallRequest = createAction(constants.APICALL_REQUEST);
+export const asyncJavaApiCallFailure = createAction(constants.APICALL_FAILURE);
 export const asyncJavaApiCall: NodejsApiCall = (url: string) => async (dispatch: Dispatch): Promise => {
   try {
     dispatch(asyncJavaApiCallRequest());
     return dispatch({
-      type: constants.JAVA_APICALL_SUCCESS,
+      type: constants.APICALL_SUCCESS,
       payload: await apiCall(url),
     });
   } catch (e) {
