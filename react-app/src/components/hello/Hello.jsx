@@ -1,13 +1,13 @@
 // @flow
 
 import * as React from 'react';
+import { HelloState } from '../../types/hello';
 import './Hello.css';
 
 type Props = {
-    name: string;
-    enthusiasmLevel: number;
-    onIncrement: () => void;
-    onDecrement: () => void;
+  enthusiasm: HelloState;
+  onIncrement: () => void;
+  onDecrement: () => void;
 };
 
 // helpers
@@ -17,10 +17,10 @@ function getExclamationMarks(numChars) {
 
 function Hello(props: Props) {
   const {
-    name, enthusiasmLevel = 1, onIncrement, onDecrement,
+    enthusiasm, onIncrement, onDecrement,
   } = props;
 
-  if (enthusiasmLevel <= 0) {
+  if (enthusiasm.enthusiasmLevel <= 0) {
     throw new Error('You could be a little more enthusiastic. :D');
   }
   return (
@@ -28,7 +28,7 @@ function Hello(props: Props) {
       <div className="greeting">
         Hello
         {' '}
-        {name + getExclamationMarks(enthusiasmLevel)}
+        {enthusiasm.languageName + getExclamationMarks(enthusiasm.enthusiasmLevel)}
       </div>
       <div>
         <button type="button" onClick={onDecrement}>-</button>

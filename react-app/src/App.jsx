@@ -3,12 +3,9 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import './App.css';
 import NavBar from './components/pages/NavBar';
-import { enthusiasm } from './reducers';
+import reducers from './reducers';
 
-const store = createStore(enthusiasm, {
-  enthusiasmLevel: 1,
-  languageName: 'ES6',
-});
+const store = createStore(reducers);
 
 const App = () => (
   <div>

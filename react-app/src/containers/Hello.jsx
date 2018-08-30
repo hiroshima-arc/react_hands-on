@@ -3,12 +3,11 @@
 import { connect } from 'react-redux';
 import Hello from '../components/hello/Hello';
 import * as actions from '../actions';
-import type { StoreState } from '../types';
+import type { State } from '../types';
 
-export function mapStateToProps({ enthusiasmLevel, languageName }: StoreState) {
+export function mapStateToProps({ enthusiasm }: State) {
   return {
-    enthusiasmLevel,
-    name: languageName,
+    enthusiasm,
   };
 }
 
