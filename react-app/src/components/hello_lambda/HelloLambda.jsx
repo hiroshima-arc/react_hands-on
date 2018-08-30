@@ -7,12 +7,14 @@ import './HelloLambda.css';
 type Props = {
   helloLambda: HelloLambdaState;
   onNode: () => void;
+  onJava: () => void;
 };
 
 function HelloLambda(props: Props) {
   const {
     helloLambda,
     onNode,
+    onJava,
   } = props;
 
   return (
@@ -22,6 +24,8 @@ function HelloLambda(props: Props) {
       </div>
       <div>
         <button type="button" onClick={onNode}>Node.js</button>
+        <br />
+        <button type="button" onClick={onJava}>Java</button>
       </div>
     </div>
   );
