@@ -13,7 +13,10 @@ const initialState = {
 export function helloLambda(state: HelloLambdaState = initialState, action: LambdaApiCallAction): HelloLambdaState {
   switch (action.type) {
     case NODEJS_APICALL:
-      return { ...state, name: state.name, message: state.message };
+      return {
+        ...state,
+        ...action.payload,
+      };
     default:
       return state;
   }

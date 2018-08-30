@@ -242,6 +242,11 @@ npm install -S react-router-dom react-router
 npm install -S react-bootstrap react-router-bootstrap
 ```
 
+### Redux middlewareのセットアップ
+```
+npm install --save redux-logger redux-thunk
+``` 
+
 **[⬆ back to top](#構成)**
 
 # 参照 #
@@ -253,3 +258,5 @@ npm install -S react-bootstrap react-router-bootstrap
 + [TypeScript React Starter](https://github.com/Microsoft/TypeScript-React-Starter)
 + [React Router](https://github.com/ReactTraining/react-router)  
 + [React Bootstrap](https://react-bootstrap.github.io/getting-started/introduction/)
++ [Redux Thunk](https://github.com/reduxjs/redux-thunk)
+* [Reduxさわってみたのでメモ 【middleware, ログ、非同期処理】](https://qiita.com/ushisantoasobu/items/1359e6f3cb7c9e0c7d54)
