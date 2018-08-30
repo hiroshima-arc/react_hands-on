@@ -52,4 +52,18 @@ export const asyncJavaApiCall: NodejsApiCall = (url: string) => async (dispatch:
   }
 };
 
+export const asyncPythonApiCallRequest = createAction(constants.APICALL_REQUEST);
+export const asyncPythonApiCallFailure = createAction(constants.APICALL_FAILURE);
+export const asyncPythonApiCall: NodejsApiCall = (url: string) => async (dispatch: Dispatch): Promise => {
+  try {
+    dispatch(asyncPythonApiCallRequest());
+    return dispatch({
+      type: constants.APICALL_SUCCESS,
+      payload: await apiCall(url),
+    });
+  } catch (e) {
+    return dispatch(asyncPythonApiCallFailure(e));
+  }
+};
+
 export type LambdaApiCallAction = NodejsApiCall;
