@@ -237,6 +237,10 @@ npm install -S redux react-redux
 npm install -S react-router-dom react-router
 ```
 
+### React Bootstrapのセットアップ
+```
+npm install -S react-bootstrap react-router-bootstrap
+```
 
 **[⬆ back to top](#構成)**
 
@@ -248,3 +252,4 @@ npm install -S react-router-dom react-router
 + [Deploying create-react-app to S3 and CloudFront](https://medium.com/@omgwtfmarc/deploying-create-react-app-to-s3-or-cloudfront-48dae4ce0af)
 + [TypeScript React Starter](https://github.com/Microsoft/TypeScript-React-Starter)
 + [React Router](https://github.com/ReactTraining/react-router)  
++ [React Bootstrap](https://react-bootstrap.github.io/getting-started/introduction/)
