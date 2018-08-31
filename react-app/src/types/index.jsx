@@ -1,6 +1,7 @@
 // @flow
 
-export type StoreState = {
-  languageName: string;
-  enthusiasmLevel: number;
+import type { HelloState } from './hello';
+
+export type State = {
+   enthusiasm: HelloState;
 }
