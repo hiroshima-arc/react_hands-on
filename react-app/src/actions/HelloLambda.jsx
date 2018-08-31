@@ -66,4 +66,18 @@ export const asyncPythonApiCall: NodejsApiCall = (url: string) => async (dispatc
   }
 };
 
+export const asyncDotNetApiCallRequest = createAction(constants.APICALL_REQUEST);
+export const asyncDotNetApiCallFailure = createAction(constants.APICALL_FAILURE);
+export const asyncDotNetApiCall: NodejsApiCall = (url: string) => async (dispatch: Dispatch): Promise => {
+  try {
+    dispatch(asyncDotNetApiCallRequest());
+    return dispatch({
+      type: constants.APICALL_SUCCESS,
+      payload: await apiCall(url),
+    });
+  } catch (e) {
+    return dispatch(asyncDotNetApiCallFailure(e));
+  }
+};
+
 export type LambdaApiCallAction = NodejsApiCall;
