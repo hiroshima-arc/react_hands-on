@@ -80,4 +80,18 @@ export const asyncDotNetApiCall: NodejsApiCall = (url: string) => async (dispatc
   }
 };
 
+export const asyncGoApiCallRequest = createAction(constants.APICALL_REQUEST);
+export const asyncGoApiCallFailure = createAction(constants.APICALL_FAILURE);
+export const asyncGoApiCall: NodejsApiCall = (url: string) => async (dispatch: Dispatch): Promise => {
+  try {
+    dispatch(asyncGoApiCallRequest());
+    return dispatch({
+      type: constants.APICALL_SUCCESS,
+      payload: await apiCall(url),
+    });
+  } catch (e) {
+    return dispatch(asyncGoApiCallFailure(e));
+  }
+};
+
 export type LambdaApiCallAction = NodejsApiCall;

@@ -10,6 +10,7 @@ type Props = {
   onJava: () => void;
   onPython: () => void;
   onDotNet: () => void;
+  onGo: () => void;
 };
 
 function HelloLambda(props: Props) {
@@ -19,6 +20,7 @@ function HelloLambda(props: Props) {
     onJava,
     onPython,
     onDotNet,
+    onGo,
   } = props;
 
   return (
@@ -34,6 +36,8 @@ function HelloLambda(props: Props) {
         <button type="button" onClick={onPython}>Python</button>
         <br />
         <button type="button" onClick={onDotNet}>.Net</button>
+        <br />
+        <button type="button" onClick={onGo}>Go</button>
       </div>
     </div>
   );
