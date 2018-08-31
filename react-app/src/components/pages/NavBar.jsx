@@ -8,7 +8,7 @@ import * as NavDropdown from 'react-bootstrap/lib/NavDropdown';
 import * as NavItem from 'react-bootstrap/lib/NavItem';
 import LinkContainer from 'react-router-bootstrap/lib/LinkContainer';
 import {
-  BrowserRouter as Router, Link, Route,
+  BrowserRouter as Router, Link, Route, Switch,
 } from 'react-router-dom';
 import HelloApp from '../hello/App';
 import HelloLambdaApp from '../hello_lambda/App';
@@ -17,6 +17,7 @@ import Home from './Home';
 import Topics from './Topics';
 import AppForm from './Form';
 import AppModal from './Modal';
+import NoMatch from './NoMatch';
 
 const NavBar = () => (
   <Router>
@@ -53,13 +54,16 @@ const NavBar = () => (
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <Route exact path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/topics" component={Topics} />
-      <Route path="/form" component={AppForm} />
-      <Route path="/modal" component={AppModal} />
-      <Route path="/hello" component={HelloApp} />
-      <Route path="/hello_lambda" component={HelloLambdaApp} />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/topics" component={Topics} />
+        <Route path="/form" component={AppForm} />
+        <Route path="/modal" component={AppModal} />
+        <Route path="/hello" component={HelloApp} />
+        <Route path="/hello_lambda" component={HelloLambdaApp} />
+        <Route component={NoMatch} />
+      </Switch>
     </div>
   </Router>
 );
