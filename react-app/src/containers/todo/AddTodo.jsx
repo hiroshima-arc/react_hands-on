@@ -24,11 +24,14 @@ const AddTodo = (props: OwnProps) => {
         }}
       >
         <input
+          type="text"
+          className="form-control add-todo"
+          placeholder="Add todo"
           ref={(node: HTMLInputElement) => {
             input = node;
           }}
         />
-        <button type="submit">
+        <button type="submit" className="btn btn-success btn-add-todo">
           Add Todo
         </button>
       </form>

@@ -3,17 +3,17 @@ import { VisibilityFilters } from '../../constants/todo';
 import FilterLink from '../../containers/todo/FilterLink';
 
 const Footer = () => (
-  <p>
+  <p className="todo-footer">
     Show:
     {' '}
     <FilterLink filter={VisibilityFilters.SHOW_ALL}>
       All
     </FilterLink>
-    {', '}
+    {' '}
     <FilterLink filter={VisibilityFilters.SHOW_ACTIVE}>
       Active
     </FilterLink>
-    {', '}
+    {' '}
     <FilterLink filter={VisibilityFilters.SHOW_COMPLETED}>
       Completed
     </FilterLink>

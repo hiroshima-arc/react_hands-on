@@ -12,6 +12,7 @@ const Link = (props: OwnProps) => {
   return (
     <button
       type="button"
+      className="btn btn-success"
       onClick={onClick}
       disabled={active}
       style={{

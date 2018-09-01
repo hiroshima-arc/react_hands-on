@@ -15,7 +15,7 @@ function handleClick(toggleTodo: (id: number) => void, id: number) {
 const TodoList = (props: OwnProps) => {
   const { todos, toggleTodo } = props;
   return (
-    <ul>
+    <ul className="list-unstyled">
       {todos.map(todo => <Todo
         key={todo.id}
         {...todo}
