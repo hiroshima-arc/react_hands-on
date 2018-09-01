@@ -16,10 +16,10 @@ const TodoList = (props: OwnProps) => {
   const { todos, toggleTodo } = props;
   return (
     <ul>
-      {todos.map((todo,index) => <Todo
-        key={index}
+      {todos.map(todo => <Todo
+        key={todo.id}
         {...todo}
-        onClick={handleClick(toggleTodo, index)}
+        onClick={handleClick(toggleTodo, todo.id)}
       />,
       )}
     </ul>

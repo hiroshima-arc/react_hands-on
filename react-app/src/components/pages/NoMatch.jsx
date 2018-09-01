@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-const NoMatch = (props: any) => (
+const NoMatch = () => (
   <div>
     <h3>
       No match
