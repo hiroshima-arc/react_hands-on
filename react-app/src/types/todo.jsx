@@ -1,6 +1,8 @@
 // @flow
 
-import { ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER } from '../constants/todo';
+import {
+  ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER, VisibilityFilters,
+} from '../constants/todo';
 
 export type AddTodo = {
     type: ADD_TODO;
@@ -17,14 +19,13 @@ export type SetVisibilityFilter = {
     filter: any;
 }
 
-export type Todo = {
+export type TodoState = {
+  id: number;
   text: string;
   completed: boolean;
 }
 
-export type todos = [Todo];
-
-export type TodoStoreState = {
-  visibilityFilter: string;
-  todos: todos;
+export type State = {
+  visibilityFilter: VisibilityFilters;
+  todos: TodoState[];
 }

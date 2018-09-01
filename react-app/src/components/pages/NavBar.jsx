@@ -12,6 +12,7 @@ import {
 } from 'react-router-dom';
 import HelloApp from '../hello/App';
 import HelloLambdaApp from '../hello_lambda/App';
+import TodoApp from '../todo/App';
 import About from './About';
 import Home from './Home';
 import Topics from './Topics';
@@ -36,7 +37,10 @@ const NavBar = () => (
                 <MenuItem eventKey={4.1}>Hello</MenuItem>
               </LinkContainer>
               <LinkContainer to="/hello_lambda">
-                <MenuItem eventKey={4.1}>HelloLambda</MenuItem>
+                <MenuItem eventKey={4.2}>HelloLambda</MenuItem>
+              </LinkContainer>
+              <LinkContainer to="/todo">
+                <MenuItem eventKey={4.3}>Todo</MenuItem>
               </LinkContainer>
             </NavDropdown>
             <LinkContainer to="/topics">
@@ -62,6 +66,7 @@ const NavBar = () => (
         <Route path="/modal" component={AppModal} />
         <Route path="/hello" component={HelloApp} />
         <Route path="/hello_lambda" component={HelloLambdaApp} />
+        <Route path="/todo" component={TodoApp} />
         <Route component={NoMatch} />
       </Switch>
     </div>
