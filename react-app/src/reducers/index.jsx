@@ -5,8 +5,17 @@ import enthusiasm from './hello/enthusiasm';
 import helloLambda from './hello_lambda/helloLambda';
 import todo from './todo';
 
-export default combineReducers({
+const appReducer = combineReducers({
   enthusiasm,
   helloLambda,
   todo,
 });
+
+const rootReducer = (state, action) => {
+  if (action.type === 'CLEAR_STATE') {
+    state = undefined;
+  }
+  return appReducer(state, action);
+};
+
+export default rootReducer;
