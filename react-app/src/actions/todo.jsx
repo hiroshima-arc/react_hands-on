@@ -97,6 +97,19 @@ const todoApiCallPost: any = async (url: string, data: {}) => {
   });
 };
 
+const todoApiCallPut: any = async (url: string, data: {}) => {
+  fetch(url, {
+    method: 'PUT',
+    mode: 'cors',
+    body: JSON.stringify({
+      id: data.id,
+      todo_id: data.id.toString(),
+      active: data.completed,
+      description: data.text,
+    }),
+  });
+};
+
 export const createTodo: CreateTodoAction = (url: string, todos: []) => async (dispatch: Dispatch): Promise => {
   try {
     dispatch(createTodoPostRequest());
@@ -118,6 +131,18 @@ export const readTodo: CreateTodoAction = (url: string) => async (dispatch: Disp
     });
   } catch (e) {
     return dispatch(createTodoGetFailure(e));
+  }
+};
+
+export const updateTodo: CreateTodoAction = (url: string, todos: []) => async (dispatch: Dispatch): Promise => {
+  try {
+    dispatch(createTodoPostRequest());
+    return dispatch({
+      type: constants.APICALL_POST_SUCCESS,
+      payload: await todos.forEach((todo) => { todoApiCallPut(url, todo); }),
+    });
+  } catch (e) {
+    return dispatch(createTodoPostFailure(e));
   }
 };
 

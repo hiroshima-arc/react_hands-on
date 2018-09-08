@@ -29,7 +29,7 @@ export const ShowFooter = () => (
 );
 
 export const CRUDFooter = (props: OwnProps) => {
-  const { action, todos } = props;
+  const { todos } = props;
   return (
     <p className="todo-footer">
       CRUD:
@@ -42,7 +42,7 @@ export const CRUDFooter = (props: OwnProps) => {
         Read
       </CRUDLink>
       {' '}
-      <CRUDLink action={CRUDActions.UPDATE}>
+      <CRUDLink action={CRUDActions.UPDATE} todos={todos}>
         Update
       </CRUDLink>
       {' '}
