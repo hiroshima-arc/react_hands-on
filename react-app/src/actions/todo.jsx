@@ -76,7 +76,7 @@ const todoApiCallGet: any = async (url: string) => {
   const newJson = [];
   for (const item in json) {
     const id = json[item].todo_id;
-    const completed = json[item].active;
+    const completed = !json[item].active;
     const text = json[item].description;
     const addData = { id, completed, text };
     newJson.push(addData);
@@ -91,7 +91,7 @@ const todoApiCallPost: any = async (url: string, data: {}) => {
     body: JSON.stringify({
       id: data.id,
       todo_id: data.id.toString(),
-      active: data.completed,
+      active: !data.completed,
       description: data.text,
     }),
   });
@@ -104,11 +104,25 @@ const todoApiCallPut: any = async (url: string, data: {}) => {
     body: JSON.stringify({
       id: data.id,
       todo_id: data.id.toString(),
-      active: data.completed,
+      active: !data.completed,
       description: data.text,
     }),
   });
 };
+
+const todoApiCallDelete: any = async (url: string, data: {}) => {
+  fetch(url, {
+    method: 'DELETE',
+    mode: 'cors',
+    body: JSON.stringify({
+      id: data.id,
+      todo_id: data.id.toString(),
+      active: !data.completed,
+      description: data.text,
+    }),
+  });
+};
+
 
 export const createTodo: CreateTodoAction = (url: string, todos: []) => async (dispatch: Dispatch): Promise => {
   try {
@@ -140,6 +154,18 @@ export const updateTodo: CreateTodoAction = (url: string, todos: []) => async (d
     return dispatch({
       type: constants.APICALL_POST_SUCCESS,
       payload: await todos.forEach((todo) => { todoApiCallPut(url, todo); }),
+    });
+  } catch (e) {
+    return dispatch(createTodoPostFailure(e));
+  }
+};
+
+export const deleteTodo: CreateTodoAction = (url: string, todos: []) => async (dispatch: Dispatch): Promise => {
+  try {
+    dispatch(createTodoPostRequest());
+    return dispatch({
+      type: constants.APICALL_POST_SUCCESS,
+      payload: await todos.forEach((todo) => { todoApiCallDelete(url, todo); }),
     });
   } catch (e) {
     return dispatch(createTodoPostFailure(e));

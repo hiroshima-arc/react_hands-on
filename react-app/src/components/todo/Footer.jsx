@@ -46,7 +46,7 @@ export const CRUDFooter = (props: OwnProps) => {
         Update
       </CRUDLink>
       {' '}
-      <CRUDLink action={CRUDActions.DELETE}>
+      <CRUDLink action={CRUDActions.DELETE} todos={todos}>
         Delete
       </CRUDLink>
     </p>
