@@ -11,6 +11,7 @@ import {
   BrowserRouter as Router, Link, Route, Switch,
 } from 'react-router-dom';
 import HelloApp from '../hello/App';
+import FizzBuzzApp from '../fizz_buzz/App';
 import HelloLambdaApp from '../hello_lambda/App';
 import About from './About';
 import Home from './Home';
@@ -38,6 +39,9 @@ const NavBar = () => (
               <LinkContainer to="/hello_lambda">
                 <MenuItem eventKey={4.1}>HelloLambda</MenuItem>
               </LinkContainer>
+              <LinkContainer to="/fizz_buzz">
+                <MenuItem eventKey={4.1}>FizzBuzz</MenuItem>
+              </LinkContainer>
             </NavDropdown>
             <LinkContainer to="/topics">
               <NavItem>Topics</NavItem>
@@ -62,6 +66,7 @@ const NavBar = () => (
         <Route path="/modal" component={AppModal} />
         <Route path="/hello" component={HelloApp} />
         <Route path="/hello_lambda" component={HelloLambdaApp} />
+        <Route path="/fizz_buzz" component={FizzBuzzApp} />
         <Route component={NoMatch} />
       </Switch>
     </div>
