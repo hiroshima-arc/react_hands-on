@@ -259,4 +259,6 @@ npm install --save redux-logger redux-thunk
 + [React Router](https://github.com/ReactTraining/react-router)  
 + [React Bootstrap](https://react-bootstrap.github.io/getting-started/introduction/)
 + [Redux Thunk](https://github.com/reduxjs/redux-thunk)
-* [Reduxさわってみたのでメモ 【middleware, ログ、非同期処理】](https://qiita.com/ushisantoasobu/items/1359e6f3cb7c9e0c7d54)
++ [Reduxさわってみたのでメモ 【middleware, ログ、非同期処理】](https://qiita.com/ushisantoasobu/items/1359e6f3cb7c9e0c7d54)
++ [ 21 Creative & Easy To Customize Free Error Page Templates 2018](https://colorlib.com/wp/free-error-page-templates/)
++ [Handling 404 pages (catch all routes) with React Router v4](https://tylermcginnis.com/react-router-handling-404-pages/)
